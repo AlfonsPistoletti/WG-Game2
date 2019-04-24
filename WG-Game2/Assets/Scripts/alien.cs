@@ -30,6 +30,11 @@ public class alien : MonoBehaviour
             Destroy(collision.gameObject);
         }
 
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+
+        }
+
     }
 
 }
