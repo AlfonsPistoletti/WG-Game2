@@ -10,10 +10,7 @@ public class Health : MonoBehaviour
     public int playerHealth = 5;
     public Text healthText;
 
-    private void Start()
-    {
 
-    }
 
     private void Update()
     {
