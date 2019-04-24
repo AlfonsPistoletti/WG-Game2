@@ -7,11 +7,13 @@ public class alien : MonoBehaviour
     Rigidbody2D rigid;
     public float speed;
     public GameObject explosion;
+    public GameObject health;
 
     // Use this for initialization
     void Start()
     {
         rigid = this.GetComponent<Rigidbody2D>();
+
     }
 
     // Update is called once per frame
