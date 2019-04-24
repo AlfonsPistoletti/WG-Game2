@@ -6,6 +6,7 @@ public class alien : MonoBehaviour
 {
     Rigidbody2D rigid;
     public float speed;
+    public GameObject explosion;
 
     // Use this for initialization
     void Start()
@@ -24,6 +25,7 @@ public class alien : MonoBehaviour
         if (collision.gameObject.CompareTag("Rakete")
             || collision.gameObject.CompareTag("Player"))
         {
+            Instantiate(explosion, this.transform.position, this.transform.rotation);
             Destroy(this.gameObject);
             Destroy(collision.gameObject);
         }
