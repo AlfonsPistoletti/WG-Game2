@@ -327,7 +327,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1928607189}
   m_LocalRotation: {x: 0.00000024240364, y: 0.7071072, z: -0.7071065, w: -0.00000026494433}
-  m_LocalPosition: {x: 0.01699996, y: -0.67199993, z: 0}
+  m_LocalPosition: {x: 0.02, y: -0.72, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1930867363}
@@ -480,7 +480,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1.4
+      scalar: 0.6
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -1230,7 +1230,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 43.47
+      scalar: 77.04
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -1336,7 +1336,7 @@ ParticleSystem:
     m_BurstCount: 0
     m_Bursts: []
   SizeModule:
-    enabled: 0
+    enabled: 1
     curve:
       serializedVersion: 2
       minMaxState: 1
@@ -1347,18 +1347,18 @@ ParticleSystem:
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: 0
-          inSlope: 0
-          outSlope: 1
+          value: 0.39189234
+          inSlope: 1.5036358
+          outSlope: 1.5036358
           tangentMode: 0
           weightedMode: 0
           inWeight: 0.33333334
-          outWeight: 0.33333334
+          outWeight: 0.19771864
         - serializedVersion: 3
           time: 1
           value: 1
           inSlope: 1
-          outSlope: 0
+          outSlope: 1
           tangentMode: 0
           weightedMode: 0
           inWeight: 0.33333334
@@ -1670,31 +1670,31 @@ ParticleSystem:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
         key1: {r: 0.9772252, g: 1, b: 0, a: 1}
-        key2: {r: 1, g: 0.7158566, b: 0.14117646, a: 1}
-        key3: {r: 1, g: 0.45734486, b: 0.1273585, a: 0.627451}
-        key4: {r: 1, g: 0.52710426, b: 0.33333337, a: 0}
-        key5: {r: 0.5566038, g: 0.5566038, b: 0.5566038, a: 0}
+        key2: {r: 1, g: 0.7158566, b: 0.14117646, a: 0.7411765}
+        key3: {r: 1, g: 0.44324932, b: 0.12549019, a: 0.6313726}
+        key4: {r: 0.8773585, g: 0.56529224, b: 0.38487893, a: 0}
+        key5: {r: 0.6886792, g: 0.6886792, b: 0.6886792, a: 0}
         key6: {r: 0.5566038, g: 0.5566038, b: 0.5566038, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
         ctime0: 1349
-        ctime1: 12336
-        ctime2: 19853
-        ctime3: 25443
-        ctime4: 34888
-        ctime5: 65535
+        ctime1: 10023
+        ctime2: 14071
+        ctime3: 20046
+        ctime4: 25829
+        ctime5: 30647
         ctime6: 65535
         ctime7: 0
         atime0: 0
-        atime1: 35273
-        atime2: 49151
-        atime3: 65535
-        atime4: 0
+        atime1: 18890
+        atime2: 35273
+        atime3: 49151
+        atime4: 65535
         atime5: 0
         atime6: 0
         atime7: 0
         m_Mode: 0
-        m_NumColorKeys: 6
-        m_NumAlphaKeys: 4
+        m_NumColorKeys: 7
+        m_NumAlphaKeys: 5
       minGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
