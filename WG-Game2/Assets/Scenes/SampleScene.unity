@@ -130,8 +130,9 @@ GameObject:
   m_Component:
   - component: {fileID: 485564843}
   - component: {fileID: 485564844}
+  - component: {fileID: 485564845}
   m_Layer: 0
-  m_Name: Unbenannt-2_0
+  m_Name: Plattform_Mitte
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -200,6 +201,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &485564845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 485564842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9530c85d183c64e10a4a79f89ee139ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  raketenPrefab: {fileID: 6127119066682034798, guid: 1214186ef891949829c396509b61045b,
+    type: 3}
+  raketenSpeed: 2
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
