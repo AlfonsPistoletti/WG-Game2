@@ -22,9 +22,5 @@ public class Health : MonoBehaviour
     {
         playerHealth = playerHealth - 1;
 
-        if(playerHealth <= 0)
-        {
-            SceneManager.LoadScene(0);
-        }
     }
 }
