@@ -10,6 +10,8 @@ public class RocketShooter : MonoBehaviour
     public float touchCooldown = 1f;
     float timer;
 
+    private float platformMargin = 10f;
+
 
     // Start is called before the first frame update
     void Start()
