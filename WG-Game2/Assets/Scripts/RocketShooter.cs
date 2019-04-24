@@ -21,14 +21,17 @@ public class RocketShooter : MonoBehaviour
         if (Input.touchCount > 0)
         {
             touch = Input.GetTouch(0);
-            Vector2 touchPosition = Camera.main.ScreenToWorldPoint(touch.position) - this.transform.position;
-            touchPosition = touchPosition.normalized;
-            Debug.Log(touchPosition.ToString());
+            if(touch.phase == TouchPhase.Began) 
+            {
+                Vector2 touchPosition = Camera.main.ScreenToWorldPoint(touch.position) - this.transform.position;
+                touchPosition = touchPosition.normalized;
+                Debug.Log(touchPosition.ToString());
 
-            GameObject rakete = Instantiate(raketenPrefab, this.transform.position, raketenPrefab.transform.rotation) as GameObject;
+                GameObject rakete = Instantiate(raketenPrefab, this.transform.position, raketenPrefab.transform.rotation) as GameObject;
 
-            Rigidbody2D raketenRigid = rakete.GetComponent<Rigidbody2D>();
-            raketenRigid.velocity = touchPosition * raketenSpeed;
+                 Rigidbody2D raketenRigid = rakete.GetComponent<Rigidbody2D>();
+                 raketenRigid.velocity = touchPosition * raketenSpeed;
+            }
 
         }
     }
