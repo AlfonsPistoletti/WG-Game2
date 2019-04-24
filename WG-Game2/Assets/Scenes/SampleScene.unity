@@ -5286,6 +5286,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: rakete_0
       objectReference: {fileID: 0}
+    - target: {fileID: 2239677552760517147, guid: 1214186ef891949829c396509b61045b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2239677552760517146, guid: 1214186ef891949829c396509b61045b,
         type: 3}
       propertyPath: m_LocalPosition.x
