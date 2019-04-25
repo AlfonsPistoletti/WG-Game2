@@ -45,25 +45,28 @@ public class RocketShooter : MonoBehaviour
                 {
                     Vector2 touchPosition = Camera.main.ScreenToWorldPoint(touch.position) - this.transform.position;
                     touchPosition = touchPosition.normalized;
-                    //Debug.Log(touchPosition.ToString());
+                    Debug.Log(touchPosition.ToString());
 
 
+                    if (touchPosition.y >= 0.4)
+                    {
 
+                        Vector3 fadenkreuzPosition = Camera.main.ScreenToWorldPoint(touch.position);
+                        fadenkreuzPosition.z = 0f;
 
-                    Vector3 fadenkreuzPosition = Camera.main.ScreenToWorldPoint(touch.position);
-                    fadenkreuzPosition.z = 0f;
+                        GameObject fadenkreuz = Instantiate(fadenkreuzPrefab, fadenkreuzPosition, fadenkreuzPrefab.transform.rotation) as GameObject;
+                        GameObject rakete = Instantiate(raketenPrefab, this.transform.position, raketenPrefab.transform.rotation) as GameObject;
 
-                    GameObject fadenkreuz = Instantiate(fadenkreuzPrefab, fadenkreuzPosition, fadenkreuzPrefab.transform.rotation) as GameObject;
-                    GameObject rakete = Instantiate(raketenPrefab, this.transform.position, raketenPrefab.transform.rotation) as GameObject;
+                        Destroy(fadenkreuz, 1f);
 
-                    Destroy(fadenkreuz, 1f);
+                        Rigidbody2D raketenRigid = rakete.GetComponent<Rigidbody2D>();
+                        raketenRigid.velocity = touchPosition * raketenSpeed;
+                        timer = 0f;
+                        reloader1.SetActive(false);
+                        reloader2.SetActive(false);
+                        reloader2_copy.SetActive(true);
 
-                    Rigidbody2D raketenRigid = rakete.GetComponent<Rigidbody2D>();
-                    raketenRigid.velocity = touchPosition * raketenSpeed;
-                    timer = 0f;
-                    reloader1.SetActive(false);
-                    reloader2.SetActive(false);
-                    reloader2_copy.SetActive(true);
+                    }
                 }
 
             }
