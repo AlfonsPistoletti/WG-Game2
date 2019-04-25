@@ -32,6 +32,7 @@ public class alien : MonoBehaviour
             Instantiate(explosion2, collision.gameObject.transform.position, collision.gameObject.transform.rotation);
             Destroy(this.gameObject);
             Destroy(collision.gameObject);
+
         }
 
         if (collision.gameObject.CompareTag("Ground"))
