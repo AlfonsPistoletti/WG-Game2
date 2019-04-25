@@ -42,7 +42,7 @@ public class RocketShooter : MonoBehaviour
                 {
                     Vector2 touchPosition = Camera.main.ScreenToWorldPoint(touch.position) - this.transform.position;
                     touchPosition = touchPosition.normalized;
-                    Debug.Log(touchPosition.ToString());
+                    //Debug.Log(touchPosition.ToString());
 
                     Vector3 fadenkreuzPosition = Camera.main.ScreenToWorldPoint(touch.position);
                     fadenkreuzPosition.z = 0f;

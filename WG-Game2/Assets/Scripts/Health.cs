@@ -6,23 +6,26 @@ using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
-
+    public BoxCollider2D boden;
     public int playerHealth = 5;
     public Text healthText;
 
-
+    private void Start()
+    {
+        boden = gameObject.GetComponent<BoxCollider2D>();
+    }
 
     private void Update()
     {
         healthText.text = playerHealth.ToString();
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D boden)
     {
-        if (collision.gameObject.CompareTag("Alien"))
+        if (boden.gameObject.CompareTag("Alien"))
         {
-            playerHealth = playerHealth -1;
-            Destroy(collision.gameObject);
+            Debug.Log("Alien collided");
         }
+
     }
 }
