@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Rakete
   - Ground
+  - Alien
   layers:
   - Default
   - TransparentFX

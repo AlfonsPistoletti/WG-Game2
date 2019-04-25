@@ -17,10 +17,12 @@ public class Health : MonoBehaviour
         healthText.text = playerHealth.ToString();
     }
 
-
-    public void LoseHealth()
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        playerHealth = playerHealth - 1;
-
+        if (collision.gameObject.CompareTag("Alien"))
+        {
+            playerHealth = playerHealth -1;
+            Destroy(collision.gameObject);
+        }
     }
 }

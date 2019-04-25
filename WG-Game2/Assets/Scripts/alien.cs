@@ -35,11 +35,6 @@ public class alien : MonoBehaviour
 
         }
 
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            health.gameObject.GetComponent<Health>().LoseHealth();
-            Destroy(this.gameObject);
-        }
 
     }
 
