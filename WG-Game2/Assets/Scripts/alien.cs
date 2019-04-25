@@ -10,6 +10,7 @@ public class alien : MonoBehaviour
     public GameObject explosion2;
     public GameObject health;
 
+
     // Use this for initialization
     void Start()
     {
@@ -21,6 +22,7 @@ public class alien : MonoBehaviour
     void Update()
     {
         rigid.velocity = Vector2.down * speed;
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
