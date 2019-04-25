@@ -11,6 +11,9 @@ public class RocketShooter : MonoBehaviour
     public float touchCooldown = 1f;
     float timer;
 
+    public GameObject reloader1;
+    public GameObject reloader2;
+
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +25,6 @@ public class RocketShooter : MonoBehaviour
     void Update()
     {
         Shoot();
-
     }
 
     void Shoot()
@@ -32,6 +34,7 @@ public class RocketShooter : MonoBehaviour
 
         if (timer >= touchCooldown)
         {
+            reloader1.SetActive(true);
 
             if (Input.touchCount > 0)
             {
@@ -56,6 +59,7 @@ public class RocketShooter : MonoBehaviour
                     Rigidbody2D raketenRigid = rakete.GetComponent<Rigidbody2D>();
                     raketenRigid.velocity = touchPosition * raketenSpeed;
                     timer = 0f;
+                    reloader1.SetActive(false);
                 }
 
             }

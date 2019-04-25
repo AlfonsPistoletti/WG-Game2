@@ -258,7 +258,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 1
   m_Sprite: {fileID: 3636391212508877586, guid: e75db0a43ad0346cdba35275f9cba3b8,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -344,7 +344,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 1
   m_Sprite: {fileID: -7923976898818586290, guid: 4dc3c5539ee5b4de19335ccb0b3a20c9,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -471,6 +471,8 @@ MonoBehaviour:
     type: 3}
   raketenSpeed: 3
   touchCooldown: 1
+  reloader1: {fileID: 368782369}
+  reloader2: {fileID: 481216770}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
