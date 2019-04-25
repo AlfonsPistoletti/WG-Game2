@@ -6,6 +6,7 @@ public class RocketShooter : MonoBehaviour
 {
     Touch touch;
     public GameObject raketenPrefab;
+    public GameObject fadenkreuzPrefab;
     public float raketenSpeed = 2f;
     public float touchCooldown = 1f;
     float timer;
@@ -30,6 +31,7 @@ public class RocketShooter : MonoBehaviour
     {
         timer = timer + Time.deltaTime;
 
+
         if (timer >= touchCooldown)
         {
 
@@ -42,7 +44,9 @@ public class RocketShooter : MonoBehaviour
                     touchPosition = touchPosition.normalized;
                     Debug.Log(touchPosition.ToString());
 
+                    GameObject fadenkreuz = Instantiate(fadenkreuzPrefab, Camera.main.ScreenToWorldPoint(touch.position), fadenkreuzPrefab.transform.rotation) as GameObject;
                     GameObject rakete = Instantiate(raketenPrefab, this.transform.position, raketenPrefab.transform.rotation) as GameObject;
+                    Destroy(fadenkreuz, 1f);
 
                     Rigidbody2D raketenRigid = rakete.GetComponent<Rigidbody2D>();
                     raketenRigid.velocity = touchPosition * raketenSpeed;

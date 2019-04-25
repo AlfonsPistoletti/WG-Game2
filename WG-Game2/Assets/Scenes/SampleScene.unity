@@ -266,6 +266,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   raketenPrefab: {fileID: 5180305770381687333, guid: 1214186ef891949829c396509b61045b,
     type: 3}
+  fadenkreuzPrefab: {fileID: 1695519094415854608, guid: 58c15dad5bdf4439db94c073c10940af,
+    type: 3}
   raketenSpeed: 3
   touchCooldown: 1
 --- !u!1 &519420028
