@@ -13,12 +13,12 @@ public class RocketShooter : MonoBehaviour
 
     public GameObject reloader1;
     public GameObject reloader2;
-
+    public GameObject reloader2_copy;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
@@ -35,6 +35,8 @@ public class RocketShooter : MonoBehaviour
         if (timer >= touchCooldown)
         {
             reloader1.SetActive(true);
+            reloader2.SetActive(true);
+            reloader2_copy.SetActive(false);
 
             if (Input.touchCount > 0)
             {
@@ -60,6 +62,8 @@ public class RocketShooter : MonoBehaviour
                     raketenRigid.velocity = touchPosition * raketenSpeed;
                     timer = 0f;
                     reloader1.SetActive(false);
+                    reloader2.SetActive(false);
+                    reloader2_copy.SetActive(true);
                 }
 
             }
