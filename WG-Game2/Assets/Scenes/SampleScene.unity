@@ -373,6 +373,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: 5
   healthText: {fileID: 1065487946}
+  healthExplosion: {fileID: 5712708751328625815, guid: 3919ab633d3f248c480dd3fb0b557125,
+    type: 3}
 --- !u!1 &823974493
 GameObject:
   m_ObjectHideFlags: 0
@@ -758,6 +760,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI
       objectReference: {fileID: 0}
+    - target: {fileID: 116924504979141423, guid: e41b78ba5e9c7401db03c08a3e9ce7bf,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 120
+      objectReference: {fileID: 0}
     - target: {fileID: 4511271688066538832, guid: e41b78ba5e9c7401db03c08a3e9ce7bf,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -827,6 +834,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_PlaneDistance
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 116924504979141420, guid: e41b78ba5e9c7401db03c08a3e9ce7bf,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 151.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 116924504979141420, guid: e41b78ba5e9c7401db03c08a3e9ce7bf,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 121.79999
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e41b78ba5e9c7401db03c08a3e9ce7bf, type: 3}

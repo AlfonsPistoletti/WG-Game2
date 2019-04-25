@@ -11,8 +11,6 @@ public class RocketShooter : MonoBehaviour
     public float touchCooldown = 1f;
     float timer;
 
-    private float platformMargin = 10f;
-
 
     // Start is called before the first frame update
     void Start()
@@ -44,11 +42,15 @@ public class RocketShooter : MonoBehaviour
                     touchPosition = touchPosition.normalized;
                     //Debug.Log(touchPosition.ToString());
 
+
+
+
                     Vector3 fadenkreuzPosition = Camera.main.ScreenToWorldPoint(touch.position);
                     fadenkreuzPosition.z = 0f;
 
                     GameObject fadenkreuz = Instantiate(fadenkreuzPrefab, fadenkreuzPosition, fadenkreuzPrefab.transform.rotation) as GameObject;
                     GameObject rakete = Instantiate(raketenPrefab, this.transform.position, raketenPrefab.transform.rotation) as GameObject;
+
                     Destroy(fadenkreuz, 1f);
 
                     Rigidbody2D raketenRigid = rakete.GetComponent<Rigidbody2D>();

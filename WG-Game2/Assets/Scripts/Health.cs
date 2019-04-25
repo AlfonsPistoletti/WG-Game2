@@ -8,6 +8,7 @@ public class Health : MonoBehaviour
 {
     public int playerHealth = 5;
     public Text healthText;
+    public GameObject healthExplosion;
 
 
     private void Update()
@@ -20,6 +21,7 @@ public class Health : MonoBehaviour
         if (collision.gameObject.CompareTag("Alien"))
         {
             //Debug.Log("Alien collided");
+            Instantiate(healthExplosion, collision.gameObject.transform.position, collision.gameObject.transform.rotation);
             Destroy(collision.gameObject);
             playerHealth = playerHealth - 1;
             RestartLevel();
