@@ -1,10 +1,7 @@
 fileFormatVersion: 2
-guid: 5b4801e71f80e274bba5bbf748cf41dd
+guid: b399ca8bd7f3e4025a19bbd5c9059ab6
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: 163475261974079624
-    second: rakete_0
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -107,32 +104,11 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: rakete_0
-      rect:
-        serializedVersion: 2
-        x: 720
-        y: 324
-        width: 60
-        height: 180
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e5e0af90cba8d404c9935df23c903c32
-      internalID: 163475261974079624
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 853203002fe1ca14c933212309fe6ed1
+    spriteID: d585c95ada1054e2a8554c454f0349f9
     internalID: 0
     vertices: []
     indices: 
