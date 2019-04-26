@@ -14,7 +14,8 @@ public class alienRaumschiff : MonoBehaviour
     bool goingleft;
     float spawntimer;
     public GameObject spawnschleim;
-    public float xschleim;
+    public float minSpawn;
+    public float maxSpawn;
 
     // Start is called before the first frame update
     void Start()
@@ -34,7 +35,7 @@ public class alienRaumschiff : MonoBehaviour
         if (spawntimer >= spawnIntervall)
         {
             Vector2 position = new Vector2(this.transform.position.x, this.transform.position.y - 1.5f);
-            Vector2 positionschleim = new Vector3(this.transform.position.x, this.transform.position.y,xschleim);
+            Vector2 positionschleim = new Vector3(this.transform.position.x, this.transform.position.y);
             Instantiate(alien, position, this.transform.rotation);
             Instantiate(spawnschleim, position, this.transform.rotation);
             spawntimer = 0f;
