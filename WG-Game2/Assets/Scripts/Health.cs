@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Health : MonoBehaviour
@@ -42,7 +41,7 @@ public class Health : MonoBehaviour
     {
         if(playerHealth <= 0)
         {
-            SceneManager.LoadScene(0);
+            GameObject.FindGameObjectWithTag("MainMenu").GetComponent<MainMenu>().GameOver();
         }
     }
 }
