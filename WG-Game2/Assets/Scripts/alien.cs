@@ -9,6 +9,7 @@ public class alien : MonoBehaviour
     public GameObject explosion;
     public GameObject explosion2;
     public GameObject health;
+    public float highscore;
 
 
     // Use this for initialization
@@ -34,6 +35,7 @@ public class alien : MonoBehaviour
             Instantiate(explosion2, collision.gameObject.transform.position, collision.gameObject.transform.rotation);
             Destroy(this.gameObject);
             Destroy(collision.gameObject);
+            highscore += 1;
 
         }
 
