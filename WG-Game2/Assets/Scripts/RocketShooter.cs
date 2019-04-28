@@ -29,6 +29,7 @@ public class RocketShooter : MonoBehaviour
 
     void Shoot()
     {
+
         timer = timer + Time.deltaTime;
 
 
@@ -44,13 +45,12 @@ public class RocketShooter : MonoBehaviour
                 if (touch.phase == TouchPhase.Began)
                 {
                     Vector2 touchPosition = Camera.main.ScreenToWorldPoint(touch.position) - this.transform.position;
-                    touchPosition = touchPosition.normalized;
-                    Debug.Log(touchPosition.ToString());
+                    Debug.Log(touchPosition);
 
 
-                    if (touchPosition.y >= 0.4)
+                    if (touchPosition.y >= 2)
                     {
-
+                        touchPosition = touchPosition.normalized;
                         Vector3 fadenkreuzPosition = Camera.main.ScreenToWorldPoint(touch.position);
                         fadenkreuzPosition.z = 0f;
 
@@ -70,6 +70,38 @@ public class RocketShooter : MonoBehaviour
                 }
 
             }
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                Vector2 clickPosition = -Vector2.one;
+
+                clickPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition) - this.transform.position;
+                Debug.Log(clickPosition);
+
+                if (clickPosition.y >= 2f)
+                {
+                    clickPosition = clickPosition.normalized;
+
+                    Vector3 fadenkreuzPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                    fadenkreuzPosition.z = 0f;
+
+                    GameObject fadenkreuz = Instantiate(fadenkreuzPrefab, fadenkreuzPosition, fadenkreuzPrefab.transform.rotation) as GameObject;
+                    GameObject rakete = Instantiate(raketenPrefab, this.transform.position, raketenPrefab.transform.rotation) as GameObject;
+
+                    Destroy(fadenkreuz, 1f);
+
+                    Rigidbody2D raketenRigid = rakete.GetComponent<Rigidbody2D>();
+                    raketenRigid.velocity = clickPosition * raketenSpeed;
+                    timer = 0f;
+                    reloader1.SetActive(false);
+                    reloader2.SetActive(false);
+                    reloader2_copy.SetActive(true);
+                }
+
+
+            }
+
+
         }
     }
 }
