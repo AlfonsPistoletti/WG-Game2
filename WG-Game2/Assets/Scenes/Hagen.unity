@@ -308,7 +308,8 @@ MonoBehaviour:
   turnTimer: 3.62
   spawnschleim: {fileID: 8913338075793403925, guid: d0b1e1f94f66b5c4f8dc33a1b4bcf9ea,
     type: 3}
-  xschleim: 0
+  minSpawn: 0
+  maxSpawn: 0
 --- !u!50 &415251233
 Rigidbody2D:
   serializedVersion: 4
@@ -1434,6 +1435,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1833899735 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 702351069891235648, guid: 2a0528d9008d44b66891b42b7f2c05fd,
+    type: 3}
+  m_PrefabInstance: {fileID: 1434080501}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1833899736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1833899735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee31060f73a4dde4a8c1735c3acd06ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Alien: {fileID: 1196694739081367978, guid: d82fa74531a7e694c8142ceedbd7fb1f, type: 3}
+  scoretext: {fileID: 1192282333}
 --- !u!1 &2045707752
 GameObject:
   m_ObjectHideFlags: 0
