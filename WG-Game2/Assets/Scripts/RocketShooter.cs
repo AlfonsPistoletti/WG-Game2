@@ -45,7 +45,7 @@ public class RocketShooter : MonoBehaviour
                 if (touch.phase == TouchPhase.Began)
                 {
                     Vector2 touchPosition = Camera.main.ScreenToWorldPoint(touch.position) - this.transform.position;
-                    Debug.Log(touchPosition);
+                    //Debug.Log(touchPosition);
 
 
                     if (touchPosition.y >= 2)
@@ -70,13 +70,13 @@ public class RocketShooter : MonoBehaviour
                 }
 
             }
-
+            /*
             if (Input.GetMouseButtonDown(0))
             {
                 Vector2 clickPosition = -Vector2.one;
 
                 clickPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition) - this.transform.position;
-                Debug.Log(clickPosition);
+                //Debug.Log(clickPosition);
 
                 if (clickPosition.y >= 2f)
                 {
@@ -100,6 +100,7 @@ public class RocketShooter : MonoBehaviour
 
 
             }
+            */          
 
 
         }

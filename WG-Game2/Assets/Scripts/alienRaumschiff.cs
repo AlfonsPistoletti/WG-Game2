@@ -1,7 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
+   
 public class alienRaumschiff : MonoBehaviour
 {
     Rigidbody2D rigid;
@@ -14,8 +15,11 @@ public class alienRaumschiff : MonoBehaviour
     bool goingleft;
     float spawntimer;
     public GameObject spawnschleim;
+    public GameObject explosion;
+    public GameObject explosion2;
     public float minSpawn;
     public float maxSpawn;
+    public float health;
 
     // Start is called before the first frame update
     void Start()
@@ -39,6 +43,7 @@ public class alienRaumschiff : MonoBehaviour
             Instantiate(alien, position, this.transform.rotation);
             Instantiate(spawnschleim, position, this.transform.rotation);
             spawntimer = 0f;
+           
         }
 
 
@@ -59,5 +64,23 @@ public class alienRaumschiff : MonoBehaviour
             }
         }
 
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.CompareTag("Rakete"))
+        {
+            health = health - 1;
+            Debug.Log(health);
+            Instantiate(explosion, this.transform.position, this.transform.rotation);
+            Instantiate(explosion2, collision.gameObject.transform.position, collision.gameObject.transform.rotation);
+            Destroy(collision.gameObject);
+            if(health <= 0)
+            {
+                GameObject.FindGameObjectWithTag("ScoreCount").GetComponent<ScoreCount>().score += 5;
+                PlayerPrefs.SetInt("Highscore", GameObject.FindGameObjectWithTag("ScoreCount").GetComponent<ScoreCount>().score);
+                SceneManager.LoadScene(0);
+            }
+        }
     }
 }   

@@ -9,6 +9,7 @@ TagManager:
   - Alien
   - ScreenShake
   - MainMenu
+  - ScoreCount
   layers:
   - Default
   - TransparentFX
