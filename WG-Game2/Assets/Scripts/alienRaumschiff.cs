@@ -23,15 +23,15 @@ public class alienRaumschiff : MonoBehaviour
         rigid = this.GetComponent<Rigidbody2D>();
         lefttimer = turnTimer;
         righttimer = turnTimer;
-
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        move();
+        Move();
         spawntimer = spawntimer + Time.deltaTime;
+        spawnIntervall = Random.Range(minSpawn, maxSpawn);
         if (spawntimer >= spawnIntervall)
         {
             Vector2 position = new Vector2(this.transform.position.x, this.transform.position.y - 1.5f);
@@ -44,7 +44,7 @@ public class alienRaumschiff : MonoBehaviour
 
         
     }
-    void move()
+    void Move()
     {
         rigid.velocity = Vector2.left * speed;
         lefttimer = lefttimer + Time.deltaTime;
