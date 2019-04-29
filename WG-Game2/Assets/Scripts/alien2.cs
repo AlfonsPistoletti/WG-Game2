@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class alien : MonoBehaviour
+public class alien2 : MonoBehaviour
 {
     Rigidbody2D rigid;
     public float speed;
@@ -35,7 +35,7 @@ public class alien : MonoBehaviour
             Instantiate(explosion2, collision.gameObject.transform.position, collision.gameObject.transform.rotation);
             Destroy(this.gameObject);
             Destroy(collision.gameObject);
-            GameObject.FindGameObjectWithTag("ScoreCount").GetComponent<ScoreCount>().score += 1;
+            GameObject.FindGameObjectWithTag("ScoreCount").GetComponent<ScoreCount>().score += 2;
 
         }
 
