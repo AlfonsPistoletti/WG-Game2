@@ -469,6 +469,7 @@ MonoBehaviour:
   reloader1: {fileID: 368782369}
   reloader2: {fileID: 481216770}
   reloader2_copy: {fileID: 1714943867}
+  rotationSpeed: 1000
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1643,12 +1644,12 @@ PrefabInstance:
     - target: {fileID: 775816331720399820, guid: 5708b8d75220c44988fa3eafb6620c0e,
         type: 3}
       propertyPath: minSpawn
-      value: 2
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 775816331720399820, guid: 5708b8d75220c44988fa3eafb6620c0e,
         type: 3}
       propertyPath: maxSpawn
-      value: 6.5
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 775816331720399820, guid: 5708b8d75220c44988fa3eafb6620c0e,
         type: 3}
