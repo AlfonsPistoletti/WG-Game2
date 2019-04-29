@@ -10,8 +10,7 @@ public class alien : MonoBehaviour
     public GameObject explosion;
     public GameObject explosion2;
     public GameObject health;
-    public float turnTimer;
-    public bool isFacingRight = true;
+
 
 
     // Use this for initialization
@@ -25,7 +24,7 @@ public class alien : MonoBehaviour
     void Update()
     {
         rigid.velocity = Vector2.down * speed;
-        turnTimer = turnTimer + Time.deltaTime;
+
 
     }
 

@@ -8,9 +8,10 @@ TagManager:
   - Ground
   - Alien
   - ScreenShake
-  - MainMenu
   - ScoreCount
   - Seite
+  - PauseMenu
+  - Shooter
   layers:
   - Default
   - TransparentFX

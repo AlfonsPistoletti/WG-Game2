@@ -27,7 +27,6 @@ public class RocketShooter : MonoBehaviour
     {
         Shoot();
 
-
     }
 
     void Shoot()
@@ -62,6 +61,8 @@ public class RocketShooter : MonoBehaviour
                         GameObject fadenkreuz = Instantiate(fadenkreuzPrefab, fadenkreuzPosition, fadenkreuzPrefab.transform.rotation) as GameObject;
                         GameObject rakete = Instantiate(raketenPrefab, this.transform.position, this.transform.rotation) as GameObject;
 
+                        rakete.transform.rotation = Quaternion.FromToRotation(rakete.transform.up, touch.position);
+
                         Destroy(fadenkreuz, 1f);
 
                         Rigidbody2D raketenRigid = rakete.GetComponent<Rigidbody2D>();
@@ -76,6 +77,7 @@ public class RocketShooter : MonoBehaviour
 
             }
 
+            /*
             if (Input.GetMouseButtonDown(0))
             {
                Vector2 clickPosition = -Vector2.one;
@@ -111,6 +113,7 @@ public class RocketShooter : MonoBehaviour
 
 
             }
+            */          
                      
 
 
