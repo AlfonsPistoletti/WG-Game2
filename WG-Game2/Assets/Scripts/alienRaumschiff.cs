@@ -78,7 +78,10 @@ public class alienRaumschiff : MonoBehaviour
             if(health <= 0)
             {
                 GameObject.FindGameObjectWithTag("ScoreCount").GetComponent<ScoreCount>().score += 5;
-                PlayerPrefs.SetInt("Highscore", GameObject.FindGameObjectWithTag("ScoreCount").GetComponent<ScoreCount>().score);
+                if (GameObject.FindGameObjectWithTag("ScoreCount").GetComponent<ScoreCount>().score > PlayerPrefs.GetInt("Highscore"))
+                {
+                    PlayerPrefs.SetInt("Highscore", GameObject.FindGameObjectWithTag("ScoreCount").GetComponent<ScoreCount>().score);
+                }
                 SceneManager.LoadScene(0);
             }
         }

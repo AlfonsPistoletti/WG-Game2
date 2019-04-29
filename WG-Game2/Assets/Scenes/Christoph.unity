@@ -797,7 +797,8 @@ PrefabInstance:
       propertyPath: m_FontData.m_Alignment
       value: 8
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4750192905153015742, guid: 98fde0fff617d448bb0807a1dc5b7651, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 98fde0fff617d448bb0807a1dc5b7651, type: 3}
 --- !u!114 &906473522 stripped
 MonoBehaviour:

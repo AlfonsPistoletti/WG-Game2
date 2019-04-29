@@ -41,7 +41,7 @@ public class Health : MonoBehaviour
     {
         if(playerHealth <= 0)
         {
-            GameObject.FindGameObjectWithTag("MainMenu").GetComponent<MainMenu>().GameOver();
+            GameObject.FindGameObjectWithTag("ScoreCount").GetComponent<ScoreCount>().GameOver();
         }
     }
 }

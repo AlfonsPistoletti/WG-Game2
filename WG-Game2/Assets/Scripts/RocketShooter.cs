@@ -14,6 +14,7 @@ public class RocketShooter : MonoBehaviour
     public GameObject reloader1;
     public GameObject reloader2;
     public GameObject reloader2_copy;
+    public float rotationSpeed = 2f;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +26,7 @@ public class RocketShooter : MonoBehaviour
     void Update()
     {
         Shoot();
+
     }
 
     void Shoot()
@@ -54,8 +56,10 @@ public class RocketShooter : MonoBehaviour
                         Vector3 fadenkreuzPosition = Camera.main.ScreenToWorldPoint(touch.position);
                         fadenkreuzPosition.z = 0f;
 
+                     
+
                         GameObject fadenkreuz = Instantiate(fadenkreuzPrefab, fadenkreuzPosition, fadenkreuzPrefab.transform.rotation) as GameObject;
-                        GameObject rakete = Instantiate(raketenPrefab, this.transform.position, raketenPrefab.transform.rotation) as GameObject;
+                        GameObject rakete = Instantiate(raketenPrefab, this.transform.position, this.transform.rotation) as GameObject;
 
                         Destroy(fadenkreuz, 1f);
 
@@ -70,7 +74,7 @@ public class RocketShooter : MonoBehaviour
                 }
 
             }
-            /*
+
             if (Input.GetMouseButtonDown(0))
             {
                 Vector2 clickPosition = -Vector2.one;
@@ -85,8 +89,11 @@ public class RocketShooter : MonoBehaviour
                     Vector3 fadenkreuzPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                     fadenkreuzPosition.z = 0f;
 
+
                     GameObject fadenkreuz = Instantiate(fadenkreuzPrefab, fadenkreuzPosition, fadenkreuzPrefab.transform.rotation) as GameObject;
-                    GameObject rakete = Instantiate(raketenPrefab, this.transform.position, raketenPrefab.transform.rotation) as GameObject;
+                    GameObject rakete = Instantiate(raketenPrefab, this.transform.position, this.transform.rotation) as GameObject;
+
+                    rakete.transform.rotation = Quaternion.FromToRotation(rakete.transform.up, clickPosition) * rakete.transform.rotation;
 
                     Destroy(fadenkreuz, 1f);
 
@@ -100,7 +107,7 @@ public class RocketShooter : MonoBehaviour
 
 
             }
-            */          
+                     
 
 
         }
