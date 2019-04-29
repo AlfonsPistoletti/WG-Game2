@@ -18,9 +18,14 @@ public class enemyShip : MonoBehaviour
     public GameObject spawnschleim;
     public GameObject explosion;
     public GameObject explosion2;
+
+    [Tooltip("Bildet einen Random-Wert zwischen minSpawnTime und maxSpawnTime")]
     public float minSpawnTime;
+    [Tooltip("Bildet einen Random-Wert zwischen minSpawnTime und maxSpawnTime")]
     public float maxSpawnTime;
+    [Tooltip("Random Wert aus spawnRandMin und SpawnRandMax. Bei 0 spawnt ein starker Alien, bei allen anderen Zahlen ein normaler.")]
     public int spawnRandMin;
+    [Tooltip("Random Wert aus spawnRandMin und SpawnRandMax. Bei 0 spawnt ein starker Alien, bei allen anderen Zahlen ein normaler.")]
     public int spawnRandMax;
     public int health;
     bool isMovingLeft = true;
