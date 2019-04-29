@@ -7,9 +7,13 @@ public class alien2 : MonoBehaviour
 {
     Rigidbody2D rigid;
     public float speed;
+    public float sideSpeed;
     public GameObject explosion;
     public GameObject explosion2;
     public GameObject health;
+    float timer;
+    public float turnTimer;
+    public bool isFacingRight = true;
 
 
     // Use this for initialization
@@ -22,7 +26,20 @@ public class alien2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Move();
+
+    }
+
+    void Move()
+    {
+        timer = timer + Time.deltaTime;
         rigid.velocity = Vector2.down * speed;
+
+        if(timer >= turnTimer)
+        {
+            rigid.velocity = new Vector2(rigid.velocity.x * sideSpeed, rigid.velocity.y);
+            timer = 0f;
+        }
 
     }
 

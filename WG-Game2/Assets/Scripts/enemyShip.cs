@@ -2,28 +2,35 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-   
-public class alienRaumschiff : MonoBehaviour
+
+public class enemyShip : MonoBehaviour
 {
     Rigidbody2D rigid;
     public GameObject alien;
+    public GameObject alien2;
     public float speed;
-    public float spawnIntervall;
+    private float spawnIntervall;
+    private int spawnRandomness;
+    float lefttimer;
+    float righttimer;
+    bool goingleft;
     float spawntimer;
     public GameObject spawnschleim;
     public GameObject explosion;
     public GameObject explosion2;
-    public float minSpawn;
-    public float maxSpawn;
-    public float health;
+    public float minSpawnTime;
+    public float maxSpawnTime;
+    public int spawnRandMin;
+    public int spawnRandMax;
+    public int health;
     bool isMovingLeft = true;
-
-
 
     // Start is called before the first frame update
     void Start()
     {
         rigid = this.GetComponent<Rigidbody2D>();
+        spawnRandomness = spawnRandMax;
+        Debug.Log(spawnRandomness);
     }
 
     // Update is called once per frame
@@ -32,21 +39,8 @@ public class alienRaumschiff : MonoBehaviour
 
         MoveEnemy();
         CheckForWalls();
+        Spawn();
 
-        spawntimer = spawntimer + Time.deltaTime;
-        spawnIntervall = Random.Range(minSpawn, maxSpawn);
-        if (spawntimer >= spawnIntervall)
-        {
-            Vector2 position = new Vector2(this.transform.position.x, this.transform.position.y - 1.5f);
-            Vector2 positionschleim = new Vector3(this.transform.position.x, this.transform.position.y);
-            Instantiate(alien, position, this.transform.rotation);
-            Instantiate(spawnschleim, position, this.transform.rotation);
-            spawntimer = 0f;
-           
-        }
-
-
-        
     }
 
 
@@ -89,16 +83,41 @@ public class alienRaumschiff : MonoBehaviour
             rigid.velocity = Vector2.right * speed;
         }
     }
+
+    void Spawn()
+    {
+        spawntimer = spawntimer + Time.deltaTime;
+        spawnIntervall = Random.Range(minSpawnTime, maxSpawnTime);
+        if (spawntimer >= spawnIntervall && spawnRandomness > 0)
+        {
+            Vector2 position = new Vector2(this.transform.position.x, this.transform.position.y - 1.5f);
+            Vector2 positionschleim = new Vector3(this.transform.position.x, this.transform.position.y);
+            Instantiate(alien, position, this.transform.rotation);
+            Instantiate(spawnschleim, position, this.transform.rotation);
+            spawntimer = 0f;
+            spawnRandomness = Random.Range(spawnRandMin, spawnRandMax);
+        }
+        if (spawntimer >= spawnIntervall && spawnRandomness == 0)
+        {
+            Vector2 position = new Vector2(this.transform.position.x, this.transform.position.y - 1.5f);
+            Vector2 positionschleim = new Vector3(this.transform.position.x, this.transform.position.y);
+            Instantiate(alien2, position, this.transform.rotation);
+            Instantiate(spawnschleim, position, this.transform.rotation);
+            spawntimer = 0f;
+            spawnRandomness = Random.Range(spawnRandMin, spawnRandMax);
+        }
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.CompareTag("Rakete"))
+        if (collision.gameObject.CompareTag("Rakete"))
         {
             health = health - 1;
             Debug.Log(health);
             Instantiate(explosion, this.transform.position, this.transform.rotation);
             Instantiate(explosion2, collision.gameObject.transform.position, collision.gameObject.transform.rotation);
             Destroy(collision.gameObject);
-            if(health <= 0)
+            if (health <= 0)
             {
                 GameObject.FindGameObjectWithTag("ScoreCount").GetComponent<ScoreCount>().score += 5;
                 if (GameObject.FindGameObjectWithTag("ScoreCount").GetComponent<ScoreCount>().score > PlayerPrefs.GetInt("Highscore"))
@@ -110,5 +129,6 @@ public class alienRaumschiff : MonoBehaviour
         }
     }
 
-    
-}   
+}
+
+     

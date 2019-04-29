@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 775816331720399809}
   - component: {fileID: 775816331720399808}
+  - component: {fileID: -2614948820823519878}
   - component: {fileID: 775816331720399823}
   - component: {fileID: 775816331720399822}
-  - component: {fileID: 775816331720399820}
   - component: {fileID: 775816331720399821}
   m_Layer: 0
   m_Name: Ufo
@@ -84,6 +84,31 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-2614948820823519878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 775816331720399811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba18e951c05074973903b616b0ce6a94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alien: {fileID: 1196694739081367978, guid: d82fa74531a7e694c8142ceedbd7fb1f, type: 3}
+  alien2: {fileID: 1196694739081367978, guid: 47579c4a6ffca4cdfad634c938300423, type: 3}
+  speed: 2
+  spawnschleim: {fileID: 8913338075793403925, guid: d0b1e1f94f66b5c4f8dc33a1b4bcf9ea,
+    type: 3}
+  explosion: {fileID: 69147477938257117, guid: 9eeb8c25211bfe445a78d350c1e0a321, type: 3}
+  explosion2: {fileID: 12149451168430800, guid: 1ddf9b4b3f0c2f942bb331d76a8b22b8,
+    type: 3}
+  minSpawn: 2
+  maxSpawn: 6
+  spawnRandMin: 0
+  spawnRandMax: 6
+  health: 3
 --- !u!50 &775816331720399823
 Rigidbody2D:
   serializedVersion: 4
@@ -131,29 +156,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.36, y: 0.1}
   m_EdgeRadius: 0
---- !u!114 &775816331720399820
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 775816331720399811}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df9fa6745d72afd4f9083bc970a1e37c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  alien: {fileID: 1196694739081367978, guid: d82fa74531a7e694c8142ceedbd7fb1f, type: 3}
-  speed: 1.5
-  spawnIntervall: 1.9
-  turnTimer: 4
-  spawnschleim: {fileID: 8913338075793403925, guid: d0b1e1f94f66b5c4f8dc33a1b4bcf9ea,
-    type: 3}
-  explosion: {fileID: 0}
-  explosion2: {fileID: 0}
-  minSpawn: 1
-  maxSpawn: 2
-  health: 0
 --- !u!95 &775816331720399821
 Animator:
   serializedVersion: 3
