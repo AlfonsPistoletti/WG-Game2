@@ -10,6 +10,7 @@ TagManager:
   - ScreenShake
   - MainMenu
   - ScoreCount
+  - Seite
   layers:
   - Default
   - TransparentFX

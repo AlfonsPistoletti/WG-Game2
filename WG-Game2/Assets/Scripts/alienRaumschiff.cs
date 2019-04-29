@@ -9,10 +9,6 @@ public class alienRaumschiff : MonoBehaviour
     public GameObject alien;
     public float speed;
     public float spawnIntervall;
-    public float turnTimer;
-    float lefttimer;
-    float righttimer;
-    bool goingleft;
     float spawntimer;
     public GameObject spawnschleim;
     public GameObject explosion;
@@ -20,20 +16,23 @@ public class alienRaumschiff : MonoBehaviour
     public float minSpawn;
     public float maxSpawn;
     public float health;
+    bool isMovingLeft = true;
+
+
 
     // Start is called before the first frame update
     void Start()
     {
         rigid = this.GetComponent<Rigidbody2D>();
-        lefttimer = turnTimer;
-        righttimer = turnTimer;
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        Move();
+        MoveEnemy();
+        CheckForWalls();
+
         spawntimer = spawntimer + Time.deltaTime;
         spawnIntervall = Random.Range(minSpawn, maxSpawn);
         if (spawntimer >= spawnIntervall)
@@ -49,23 +48,47 @@ public class alienRaumschiff : MonoBehaviour
 
         
     }
-    void Move()
+
+
+    void CheckForWalls()
     {
-        rigid.velocity = Vector2.left * speed;
-        lefttimer = lefttimer + Time.deltaTime;
-        if (lefttimer > turnTimer)
+        if (isMovingLeft == true)
         {
-            rigid.velocity = Vector2.right * speed;
-            righttimer = righttimer + Time.deltaTime;
-            if (righttimer > turnTimer)
+            RaycastHit2D[] hits = Physics2D.RaycastAll(this.transform.position,
+                                    Vector2.left, 2.3f);
+            foreach (RaycastHit2D h in hits)
             {
-                lefttimer = 0f;
-                righttimer = 0f;
+                if (h.transform.CompareTag("Seite") == true)
+                {
+                    isMovingLeft = false;
+                }
             }
         }
-
+        else
+        {
+            RaycastHit2D[] hits = Physics2D.RaycastAll(this.transform.position,
+                                    Vector2.right, 2.3f);
+            foreach (RaycastHit2D h in hits)
+            {
+                if (h.transform.CompareTag("Seite") == true)
+                {
+                    isMovingLeft = true;
+                }
+            }
+        }
     }
 
+    void MoveEnemy()
+    {
+        if (isMovingLeft == true)
+        {
+            rigid.velocity = Vector2.left * speed;
+        }
+        else
+        {
+            rigid.velocity = Vector2.right * speed;
+        }
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.CompareTag("Rakete"))
@@ -86,4 +109,6 @@ public class alienRaumschiff : MonoBehaviour
             }
         }
     }
+
+    
 }   
