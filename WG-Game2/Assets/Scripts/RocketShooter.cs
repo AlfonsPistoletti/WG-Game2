@@ -19,7 +19,7 @@ public class RocketShooter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        this.enabled = true;
     }
 
     // Update is called once per frame
@@ -29,7 +29,7 @@ public class RocketShooter : MonoBehaviour
 
     }
 
-    void Shoot()
+    public void Shoot()
     {
 
         timer = timer + Time.deltaTime;
@@ -61,7 +61,7 @@ public class RocketShooter : MonoBehaviour
                         GameObject fadenkreuz = Instantiate(fadenkreuzPrefab, fadenkreuzPosition, fadenkreuzPrefab.transform.rotation) as GameObject;
                         GameObject rakete = Instantiate(raketenPrefab, this.transform.position, this.transform.rotation) as GameObject;
 
-                        rakete.transform.rotation = Quaternion.FromToRotation(rakete.transform.up, touch.position);
+                        rakete.transform.rotation = Quaternion.FromToRotation(rakete.transform.up, touchPosition);
 
                         Destroy(fadenkreuz, 1f);
 
@@ -114,6 +114,7 @@ public class RocketShooter : MonoBehaviour
 
             }
             */          
+                     
                      
 
 
